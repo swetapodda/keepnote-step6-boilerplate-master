@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: ${MYSQL_URL}
+    username: ${MYSQL_USER}
+    password: ${MYSQL_ROOT_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+  application:
+    name: user-auth
+  zipkin:
+    base-url: http://192.168.1.16:9411/  
+    locator:
+      discovery:
+        enable: true
+server:
+  port: 9100
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.1.16:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true

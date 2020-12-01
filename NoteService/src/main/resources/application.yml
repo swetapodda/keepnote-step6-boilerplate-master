@@ -1,0 +1,18 @@
+spring:
+  data:
+    mongodb:
+      #username: ${MONGO_USERNAME}
+      #password: ${MONGO_PASSWORD}
+      database: notesdb_06
+      port: 27017
+      host: 192.168.1.16
+  application:
+    name: note-service
+server:
+  port: 9300
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.1.16:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
